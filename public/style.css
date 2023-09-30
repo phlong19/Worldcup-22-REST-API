@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Trispace&display=swap');
+
+:root {
+  --main-color: rgb(255, 160, 122);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #222;
+  font-family: 'Trispace', sans-serif;
+  color: whitesmoke;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+    margin-bottom: 2rem;
+    padding-left: 2rem;
+  }
+
+.github a {
+  color: var(--main-color);
+}
+
+.intro {
+  font-style: bold;
+  color: var(--main-color);
+}
+
+.maincolor {
+  color: var(--main-color);
+}
+
+.path {
+  background: var(--main-color);
+  color: black;
+  padding: 0.3rem;
+  border-radius: 0.5rem;
+  display: inline-block;
+  margin-bottom: 2rem;
+  margin-left: 3px;
+  transition: color 0.2s;
+  font-weight: 600;
+}
+
+table {
+    max-width: fit-content;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid white;
+}
+
+th,
+td {
+  padding: 1.5rem;
+}
+
+.divider {
+  margin-bottom: 3rem;
+}

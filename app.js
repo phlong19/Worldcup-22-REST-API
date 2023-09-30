@@ -3,7 +3,10 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
-const playerRoutes = require('./routes/player');
+const teamRoutes = require('./routes/team');
+const wc22Routes = require('./routes/worldcup22');
+const wcRoutes = require('./routes/worldcupMatch');
+const intRoutes = require('./routes/internationalMatch');
 
 const app = express();
 
@@ -19,7 +22,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use('/v1', playerRoutes);
+app.use('/all-teams', teamRoutes);
+app.use('/worldcup22', wc22Routes);
+app.use('/international-match', intRoutes);
+app.use('/worldcup-match', wcRoutes);
 
 app.use((error, req, res, next) => {
   if (!error.statusCode) error.statusCode = 500;

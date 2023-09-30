@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>World Cup Documentation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="github">
+        <span>Github:</span>
+        <a href="https://github.com/phlong19">phlong19</a>
+      </div>
+      <h1 class="intro">📜 INTRODUCTION</h1>
+      <h3>Free use API for ⚽</h3>
+
+      <ul>
+        <li>All international football team, ranked by FIFA. 📈</li>
+        <li>World Cup 22: Players, Groups</li>
+        <li>
+          All World Cup matches, International Matches (Friendly, AFC, World Cup
+          Qualifications,...)
+        </li>
+      </ul>
+      <section>
+        <h2># <span class="maincolor">Teams</span></h2>
+        <br />
+
+        <h4>
+          Path
+          <span
+            ><a class="path" href="#" target="_blank"
+              >https://worldcup-api.onrender.com/all-teams</a
+            ></span
+          >
+        </h4>
+
+        <table>
+          <tr>
+            <th>Params / Query</th>
+            <th>Description</th>
+            <th>Examples</th>
+          </tr>
+          <!-- get by id -->
+          <tr>
+            <td>id</td>
+            <td>Get ONE team by ID.</td>
+            <td>e.g. <span class="path">/all-teams/ID</span></td>
+          </tr>
+          <!-- search by characters -->
+          <tr>
+            <td>team</td>
+            <td>Search all teams contain the 'team' query string</td>
+            <td>e.g. <span class="path">/all-teams?team=string</span></td>
+          </tr>
+          <!-- query by rank -->
+          <tr>
+            <td>rank || rankHigherThan & rankLowerThan</td>
+            <td>
+              Get the exact team with that rank or teams within the range.
+              Default rankHigherThan = 0 & rankLowerThan = 1000
+            </td>
+            <td>
+              e.g. <span class="path">/all-teams?rank=1</span> OR
+              <span class="path">/all-teams?rankHigherThan=3</span>
+              <span class="path"
+                >/all-teams?rankHigherThan=5&rankLowerThan=7</span
+              >
+            </td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2># <span class="maincolor">World Cup 22</span></h2>
+        <br />
+        <h4>
+          Path
+          <span
+            ><a class="path" href="#" target="_blank"
+              >https://worldcup-api.onrender.com/worldcup22</a
+            ></span
+          >
+        </h4>
+        <table>
+          <tr>
+            <th>Params / Query</th>
+            <th>Description</th>
+            <th>Examples</th>
+          </tr>
+          <tr>
+            <td>player</td>
+            <td>Search all players contain the 'name' query string</td>
+            <td>e.g. <span class="path">/all-teams?team=string</span></td>
+          </tr>
+        </table>
+      </section>
+    </div>
+    <div class="divider"></div>
+  </body>
+</html>

@@ -3,7 +3,7 @@ const teamSchema = new mongoose.Schema({
   rank: Number,
   team: {
     type: String,
-    require: true,
+    required: true,
   },
   squadSize: Number,
   avgAge: Number,
