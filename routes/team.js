@@ -11,7 +11,7 @@ router.get(
   teamController.getTeam
 );
 
-router.get('/team', query('team').trim().notEmpty(), teamController.searchTeam);
+router.get('/', query('team').trim().notEmpty(), teamController.searchTeam);
 
 router.get('/rank', teamController.searchRank);
 

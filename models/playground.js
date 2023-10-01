@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
+
 const matchSchema = new Schema({
-  year: Number,
+  year: {
+    type: Number,
+    required: true,
+  },
   date: {
     type: Date,
     required: true,
   },
-  stage: String,
+  stage: { type: String, required: true },
   homeTeam: {
     type: Schema.Types.ObjectId,
     ref: 'Team',
@@ -22,4 +26,4 @@ const matchSchema = new Schema({
   winConditions: String,
 });
 
-module.exports = mongoose.model('worldcupMatches', matchSchema);
+module.exports = mongoose.model('Playground', matchSchema);

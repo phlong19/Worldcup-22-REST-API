@@ -45,14 +45,14 @@
           <!-- get by id -->
           <tr>
             <td>id</td>
-            <td>Get ONE team by ID.</td>
-            <td>e.g. <span class="path">/all-teams/ID</span></td>
+            <td>Get a team with id provided.</td>
+            <td>e.g. <span class="path">path/id</span></td>
           </tr>
           <!-- search by characters -->
           <tr>
             <td>team</td>
             <td>Search all teams contain the 'team' query string</td>
-            <td>e.g. <span class="path">/all-teams?team=string</span></td>
+            <td>e.g. <span class="path">path?team=string</span></td>
           </tr>
           <!-- query by rank -->
           <tr>
@@ -62,11 +62,9 @@
               Default rankHigherThan = 0 & rankLowerThan = 1000
             </td>
             <td>
-              e.g. <span class="path">/all-teams?rank=1</span> OR
-              <span class="path">/all-teams?rankHigherThan=3</span>
-              <span class="path"
-                >/all-teams?rankHigherThan=5&rankLowerThan=7</span
-              >
+              e.g. <span class="path">path?rank=1</span> OR
+              <span class="path">path?rankHigherThan=3</span>
+              <span class="path">path?rankHigherThan=5&rankLowerThan=7</span>
             </td>
           </tr>
         </table>
@@ -90,13 +88,182 @@
             <th>Examples</th>
           </tr>
           <tr>
+            <td></td>
+            <td>Get all groups in World Cup 22</td>
+            <td>e.g. <span class="path">path/groups</span></td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td>Get a player with id provided.</td>
+            <td>e.g. <span class="path">path/player/id</span></td>
+          </tr>
+          <tr>
             <td>player</td>
             <td>Search all players contain the 'name' query string</td>
-            <td>e.g. <span class="path">/all-teams?team=string</span></td>
+            <td>e.g. <span class="path">path/player?name=string</span></td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>
+          #
+          <span class="maincolor"
+            >All World Cup matches / International matches</span
+          >
+        </h2>
+        <br />
+        <h4>
+          Path
+          <span
+            ><a class="path" href="#" target="_blank"
+              >https://worldcup-api.onrender.com/worldcup-match</a
+            ></span
+          >
+          <br />
+          <span
+            ><a class="path" href="#" target="_blank"
+              >https://worldcup-api.onrender.com/international-match</a
+            ></span
+          >
+        </h4>
+        <div style="border: 1px solid white; padding: 0.5rem">
+          <span class="path">Note:</span> Date format must be: YYYY-MM-DD
+          <p>
+            Due to a huge numbers of records can be returned, I limited it just
+            100 records per request.
+          </p>
+          <br />
+          <p>
+            Add 'page' query to get next 100 records, total number of pages also
+            will be returned.
+          </p>
+          <br />Example:
+          <span class="path"
+            >/international-match?dateHigherThan=2019-10-01&dateLowerThan=2020-12-31&page=2</span
+          >
+          <p>Results:</p>
+          <img src="results.png" alt="" srcset="" />
+        </div>
+        <br />
+        <table>
+          <tr>
+            <th>Params / Query</th>
+            <th>World Cup</th>
+            <th>International</th>
+          </tr>
+          <tr>
+            <td>all</td>
+            <td colspan="2" style="text-align: center">
+              get all matches <br /><br />
+              e.g. <span class="path">path/all</span>
+            </td>
+          </tr>
+          <tr>
+            <td>id</td>
+            <td colspan="2" style="text-align: center">
+              e.g. <span class="path">path/id</span>
+            </td>
+          </tr>
+          <tr>
+            <td>date</td>
+            <td colspan="2">
+              Using date like teams ranking above.
+              <br /><br />
+
+              e.g. <span class="path">path?date=1999-07-15</span> OR
+
+              <span class="path"
+                >path?dateHigherThan=2019-12-01&dateLowerThan=2020-01-01</span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>year</td>
+            <td>
+              Exact year only <br /><br />
+              Get all matches of that World Cup year. <br />
+              e.g. <span class="path">path/year/2002</span>
+            </td>
+            <td>No support.</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2># <span class="maincolor">Playground</span></h2>
+        <br />
+        <h4>
+          Path
+          <span
+            ><a class="path" href="#" target="_blank"
+              >https://worldcup-api.onrender.com/playground</a
+            ></span
+          >
+        </h4>
+        <h5>Playground's data is a copy of all World Cup matches.</h5>
+        <br />
+        <span class="path">Note:</span> Date format must be: YYYY-MM-DD
+
+        <table>
+          <tr>
+            <th>Methods</th>
+            <th>Params - Query</th>
+            <th>Required</th>
+            <th>Examples</th>
+          </tr>
+          <tr>
+            <td>GET</td>
+            <td>id</td>
+            <td>Yes</td>
+            <td>
+              <span class="path"
+                ><a
+                  href="http://localhost:8080/playground/6516f0d1f4982d78357070ed"
+                  target="_blank"
+                  >path/6516f0d1f4982d78357070ed</a
+                ></span
+              >
+            </td>
+          </tr>
+          <tr>
+            <td>POST</td>
+            <td rowspan="3">
+              <ul>
+                <li>year</li>
+                <li>date</li>
+                <li>stage</li>
+                <li>homeTeam</li>
+                <li>homeGoals</li>
+                <li>awayTeam</li>
+                <li>awayGoals</li>
+                <li>winConditions</li>
+              </ul>
+            </td>
+            <td rowspan="2">
+              Yes except winConditions <br /><br />
+              <img src="form.png" alt="" />
+            </td>
+            <td>e.g. <span class="path">path/new-match/</span></td>
+          </tr>
+          <tr>
+            <td>PUT</td>
+            <td rowspan="3">e.g. <span class="path">path/id</span></td>
+          </tr>
+          <tr>
+            <td>PATCH</td>
+            <td>None, just update any field you want</td>
+          </tr>
+          <tr>
+            <td>DELETE</td>
+            <td>id</td>
+            <td>Yes</td>
           </tr>
         </table>
       </section>
     </div>
     <div class="divider"></div>
+    <footer>@phlongg19</footer>
+    <br>
   </body>
 </html>

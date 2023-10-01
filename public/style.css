@@ -27,9 +27,9 @@ a {
 }
 
 ul {
-    margin-bottom: 2rem;
-    padding-left: 2rem;
-  }
+  margin-bottom: 2rem;
+  padding-left: 2rem;
+}
 
 .github a {
   color: var(--main-color);
@@ -57,7 +57,7 @@ ul {
 }
 
 table {
-    max-width: fit-content;
+  max-width: fit-content;
   border-collapse: collapse;
   margin-bottom: 2rem;
 }

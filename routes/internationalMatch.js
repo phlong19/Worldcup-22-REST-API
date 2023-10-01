@@ -3,6 +3,8 @@ const router = express.Router();
 
 const intController = require('../controllers/internationalMatch');
 
-router.get('/');
+router.get('/all', intController.getMatches);
+
+router.get('/', intController.searchMatchesByDate);
 
 module.exports = router;

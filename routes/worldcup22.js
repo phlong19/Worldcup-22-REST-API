@@ -1,10 +1,11 @@
 const express = require('express');
 const { param, query } = require('express-validator');
+
 const wc22Controller = require('../controllers/player');
 
 const router = express.Router();
 
-router.get('/player/:id', wc22Controller.getPlayer);
+router.get('/player/:id',param('id').notEmpty() ,wc22Controller.getPlayer);
 
 router.get('/player', query('name').notEmpty(), wc22Controller.searchPlayer);
 

@@ -29,11 +29,19 @@ exports.getPlayer = async (req, res, next) => {
 
 exports.searchPlayer = async (req, res, next) => {
   const { name } = req.query;
+  const errors = validationResult(req);
 
   try {
+    if (!errors.isEmpty()) {
+      const error = new Error('Invalid player name');
+      error.statusCode = 422;
+      throw error;
+    }
+
     const data = await Player.find({
       player: { $regex: name, $options: 'i' },
-    }).populate('team','-_id team rank points');
+    }).populate('team', '-_id team rank points');
+
     if (data.length === 0) {
       return res.status(200).json({ message: "Can't find any players" });
     }
