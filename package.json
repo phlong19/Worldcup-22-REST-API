@@ -1,5 +1,8 @@
 {
-  "name": "practices-rest-apis",
+  "name": "worldcup-rest-apis",
+  "engines": {
+    "node": "19.8.1"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
